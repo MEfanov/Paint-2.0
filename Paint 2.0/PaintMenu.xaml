@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Paint_2._0.PaintMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Paint_2._0"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Menu x:Name="Body">
+        <MenuItem Header="Файл">
+            <MenuItem Header="Создать" Command="New"/>
+            <Separator/>
+            <MenuItem Header="Открыть" Command="Open"/>
+            <Separator/>
+            <MenuItem x:Name="Menu_Save" Header="Сохранить" Command="Save"/>
+            <MenuItem x:Name="Menu_SaveAs" Header="Сохранить как..." Command="SaveAs"/>
+            <Separator/>
+            <MenuItem Header="Выход" Command="Close"/>
+        </MenuItem>
+        <MenuItem Header="Изображение">
+            <MenuItem x:Name="Menu_CanvasSize" Header="Размер холста..." Command="local:PaintCommands.ChangeCanvasSize"/>
+            <MenuItem x:Name="Menu_WindowSize" Header="Размер окна..." Command="local:PaintCommands.ChangeWindowSize"/>
+            <Separator/>
+            <MenuItem x:Name="Menu_Clear" Header="Очистить" Command="local:PaintCommands.ClearCanvas"/>
+        </MenuItem>
+        <MenuItem Header="Вид">
+            <MenuItem x:Name="Menu_ZoomIn" Header="Увеличить" Command="local:PaintCommands.ZoomIn"/>
+            <MenuItem x:Name="Menu_ZoomOut" Header="Уменьшить" Command="local:PaintCommands.ZoomOut"/>
+            <Separator/>
+            <MenuItem x:Name="Menu_Cascade" Header="Каскадом" Command="local:PaintCommands.LayoutCascade"/>
+            <MenuItem x:Name="Menu_Horizontal" Header="Горизонтально" Command="local:PaintCommands.LayoutHorizontal"/>
+            <MenuItem x:Name="Menu_Vertical" Header="Вертикально" Command="local:PaintCommands.LayoutVertical"/>
+            <MenuItem x:Name="Menu_Minimize" Header="Свернуть все" Command="local:PaintCommands.LayoutMinimize"/>
+        </MenuItem>
+        <MenuItem Header="Справка">
+            <MenuItem Header="О программе..." Command="local:PaintCommands.ShowAboutBox"/>
+        </MenuItem>
+    </Menu>
+</UserControl>

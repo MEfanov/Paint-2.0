@@ -1,0 +1,25 @@
+﻿<Window x:Class="Paint_2._0.Window_SizeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint_2._0"
+        mc:Ignorable="d"
+        Title="WindowSizeDialog" Height="114" Width="194" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Margin="5">
+                <TextBlock Text="Ширина:"/>
+                <TextBox x:Name="WidthTextBox" Height="20" Width="80"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Margin="5">
+                <TextBlock Text="Высота:"/>
+                <TextBox x:Name="HeightTextBox" Height="20" Width="80"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="AcceptButton" Height="20" Width="70" Margin="5" Content="Применить" Click="AcceptButton_Click"/>
+            <Button x:Name="CancelButton" Height="20" Width="70" Margin="5" Content="Отмена" Click="CancelButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

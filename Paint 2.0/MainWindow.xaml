@@ -1,0 +1,47 @@
+﻿<Window x:Class="Paint_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint_2._0"
+        mc:Ignorable="d"
+        Title="Paint 2.0" Height="450" Width="800" Background="WhiteSmoke" Closing="Window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding x:Name="CreateNewWindow_Command" Command="New" Executed="CreateNewWindowCommand_Executed"/>
+        <CommandBinding x:Name="OpenFile_Command" Command="Open" Executed="OpenFile_Command_Executed"/>
+        <CommandBinding x:Name="SaveImageAs_Command" Command="SaveAs" Executed="SaveImageAs_Command_Executed"/>
+        <CommandBinding x:Name="SaveImage_Command" Command="Save" Executed="SaveImage_Command_Executed"/>
+        <CommandBinding x:Name="Close_Command" Command="Close" Executed="Close_Command_Executed"/>
+        <CommandBinding x:Name="ChangeWindowSize_Command" Command="local:PaintCommands.ChangeWindowSize"
+                        Executed="ChangeWindowSizeCommand_Executed"/>
+        <CommandBinding x:Name="ChangeCanvasSize_Command" Command="local:PaintCommands.ChangeCanvasSize"
+                        Executed="ChangeCanvasSizeCommand_Executed"/>
+        <CommandBinding x:Name="ClearCanvas_Command" Command="local:PaintCommands.ClearCanvas"
+                        Executed="ClearCanvasCommand_Executed"/>
+        <CommandBinding x:Name="ZoomIn_Command" Command="local:PaintCommands.ZoomIn"
+                        Executed="ZoomInCommand_Executed"/>
+        <CommandBinding x:Name="ZoomOut_Command" Command="local:PaintCommands.ZoomOut"
+                        Executed="ZoomOutCommand_Executed"/>
+        <CommandBinding x:Name="LayoutCascade_Command" Command="local:PaintCommands.LayoutCascade"
+                        Executed="LayoutCascadeCommand_Executed"/>
+        <CommandBinding x:Name="LayoutHorizontal_Command" Command="local:PaintCommands.LayoutHorizontal"
+                        Executed="LayoutHorizontalCommand_Executed"/>
+        <CommandBinding x:Name="LayoutVertical_Command" Command="local:PaintCommands.LayoutVertical"
+                        Executed="LayoutVerticalCommand_Executed"/>
+        <CommandBinding x:Name="LayoutMinimize_Command" Command="local:PaintCommands.LayoutMinimize"
+                        Executed="LayoutMinimizeCommand_Executed"/>
+        <CommandBinding x:Name="ShowAboutBox_Command" Command="local:PaintCommands.ShowAboutBox"
+                        Executed="ShowAboutBoxCommand_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <local:PaintMenu x:Name="menu" VerticalAlignment="Top" Grid.Row="0"/>
+        <local:PaintToolBar VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="1" DrawingToolTypeChanged="PaintToolBar_DrawingToolTypeChanged"/>
+        <local:WindowManager x:Name="PaintWindowManager" Grid.Row="2" ActiveWindowChanged="PaintWindowManager_ActiveWindowChanged"/>
+    </Grid>
+</Window>
